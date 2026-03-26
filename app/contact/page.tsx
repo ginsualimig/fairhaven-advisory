@@ -1,141 +1,114 @@
-import Link from "next/link";
+"use client";
+
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
   return (
     <div className="bg-offwhite min-h-screen">
       {/* Header */}
-      <section className="bg-navy py-20 px-6 border-b border-gold/20">
+      <section className="bg-navy py-24 px-6 border-b border-gold/20">
         <div className="mx-auto max-w-3xl">
-          <span className="inline-block text-teal text-xs font-semibold tracking-widest uppercase mb-4">
-            Get Started
+          <span className="inline-block text-teal text-xs font-semibold tracking-widest uppercase mb-6">
+            Get in Touch
           </span>
           <h1
             className="text-4xl md:text-5xl font-bold text-offwhite mb-4"
             style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
           >
-            Let&apos;s assess mutual fit.
+            Start a conversation.
           </h1>
-          <p className="text-offwhite/70 text-lg max-w-xl">
-            We qualify all partners before sharing deal flow. A 15-minute call is the fastest way to determine if we&apos;re a fit.
+          <p className="text-offwhite/65 text-lg max-w-xl leading-relaxed">
+            We work with serious investors and business owners. If you are looking for a partner with operational depth, reach out.
           </p>
         </div>
       </section>
 
-      {/* Contact Options */}
+      {/* Contact */}
       <section className="py-20 px-6">
-        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Left: Form */}
+        <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-16">
+          {/* Form */}
           <div>
-            <h2
-              className="text-2xl font-bold text-navy mb-6"
-              style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-            >
-              Investor intake
-            </h2>
-            <form className="space-y-5">
-              <div>
-                <label className="block text-sm font-medium text-navy mb-1">Full name</label>
-                <input
-                  type="text"
-                  className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors"
-                  placeholder="Your full name"
-                />
+            {submitted ? (
+              <div className="py-12">
+                <p className="text-navy text-lg font-semibold mb-2">Thank you.</p>
+                <p className="text-stone text-sm">We'll be in touch.</p>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-navy mb-1">Email</label>
-                <input
-                  type="email"
-                  className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors"
-                  placeholder="your@email.com"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-navy mb-1">I am a...</label>
-                <select className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors">
-                  <option value="">Select type</option>
-                  <option>AIP / Residency investor</option>
-                  <option>PE / VC principal</option>
-                  <option>Family office</option>
-                  <option>Business owner seeking partnership</option>
-                  <option>Other capital deployer</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-navy mb-1">Investment capacity (NZD)</label>
-                <select className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors">
-                  <option value="">Select range</option>
-                  <option>$1M – $3M</option>
-                  <option>$3M – $5M</option>
-                  <option>$5M – $10M</option>
-                  <option>$10M+</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-navy mb-1">Brief context</label>
-                <textarea
-                  rows={4}
-                  className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors"
-                  placeholder="What are you trying to achieve? (Optional but helpful)"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full rounded-sm bg-teal px-8 py-3.5 text-sm font-semibold text-white hover:bg-teal/90 transition-colors"
-              >
-                Submit Application
-              </button>
-            </form>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-widest text-stone mb-2">Name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    value={form.name}
+                    onChange={handleChange}
+                    className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors"
+                    placeholder="Your name"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-widest text-stone mb-2">Email</label>
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    value={form.email}
+                    onChange={handleChange}
+                    className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors"
+                    placeholder="your@email.com"
+                  />
+                </div>
+                <div>
+                  <label className="block text-xs font-semibold uppercase tracking-widest text-stone mb-2">Message</label>
+                  <textarea
+                    name="message"
+                    required
+                    rows={6}
+                    value={form.message}
+                    onChange={handleChange}
+                    className="w-full border border-stone/20 rounded-sm px-4 py-3 text-sm text-navy bg-white focus:outline-none focus:border-teal transition-colors resize-none"
+                    placeholder="Tell us about your situation."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="inline-flex items-center rounded-sm border border-teal px-8 py-3.5 text-sm font-medium text-teal hover:bg-teal/10 transition-colors"
+                >
+                  Send
+                </button>
+              </form>
+            )}
           </div>
 
-          {/* Right: Direct contact + info */}
-          <div className="space-y-8">
+          {/* Info */}
+          <div className="space-y-10">
             <div>
-              <h2
-                className="text-2xl font-bold text-navy mb-4"
-                style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-              >
-                Direct contact
-              </h2>
-              <div className="space-y-4">
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-1">Email</div>
-                  <a href="mailto:enquiries@fairhavenadvisory.co.nz" className="text-navy hover:text-teal transition-colors">
-                    enquiries@fairhavenadvisory.co.nz
-                  </a>
-                </div>
-                <div>
-                  <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-1">Locations</div>
-                  <p className="text-stone text-sm">Auckland · Wellington · Sydney · Melbourne</p>
-                </div>
-              </div>
+              <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-2">Email</div>
+              <a href="mailto:intro@fairhavenadvisory.co.nz" className="text-navy hover:text-teal transition-colors text-sm">
+                intro@fairhavenadvisory.co.nz
+              </a>
             </div>
-
-            <div className="rounded-lg bg-navy p-8">
-              <h3
-                className="text-xl font-bold text-offwhite mb-3"
-                style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-              >
-                What to expect
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Response within 24 hours on business days",
-                  "15-minute discovery call to assess fit",
-                  "If qualified: full investment criteria and current pipeline",
-                  "Deal-specific NDA for full case study access",
-                  "No unsolicited marketing or data sharing",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-offwhite/70">
-                    <span className="text-teal mt-0.5 shrink-0">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div>
+              <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-2">Geography</div>
+              <p className="text-stone text-sm">New Zealand · Australia</p>
             </div>
-
-            <div className="text-xs text-stone leading-relaxed border-t border-stone/10 pt-6">
-              <strong className="text-navy block mb-1">Disclaimer</strong>
-              Fairhaven Advisory Ltd is not a licensed immigration adviser. Immigration advice must be obtained from a licensed adviser. All investment activities are subject to NZ and AU regulatory requirements. This is not a solicitation or offer of securities.
+            <div className="pt-6 border-t border-stone/10">
+              <p className="text-xs text-stone leading-relaxed">
+                Fairhaven Advisory Ltd. All engagements subject to applicable New Zealand and Australian regulatory requirements.
+              </p>
             </div>
           </div>
         </div>

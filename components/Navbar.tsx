@@ -4,10 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const navLinks = [
+  { href: "/#thinking", label: "Our Thinking" },
   { href: "/#what-we-do", label: "What We Do" },
-  { href: "/#portfolio", label: "Portfolio" },
-  { href: "/#who-we-serve", label: "Who We Serve" },
-  { href: "/#approach", label: "Our Approach" },
+  { href: "/#process", label: "Our Process" },
+  { href: "/#cases", label: "Cases" },
   { href: "/#team", label: "Team" },
   { href: "/insights", label: "Insights" },
 ];
@@ -40,10 +40,10 @@ export default function Navbar() {
 
         {/* CTA */}
         <Link
-          href="/#get-started"
-          className="hidden md:inline-flex items-center rounded-sm bg-teal px-5 py-2 text-sm font-semibold text-white hover:bg-teal/90 transition-colors"
+          href="/#contact"
+          className="hidden md:inline-flex items-center rounded-sm border border-gold/40 px-5 py-2 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
         >
-          Investor Consultation
+          Get in touch
         </Link>
 
         {/* Mobile hamburger */}
@@ -75,11 +75,11 @@ export default function Navbar() {
             ))}
             <li>
               <Link
-                href="/#get-started"
-                className="inline-flex items-center rounded-sm bg-teal px-5 py-2 text-sm font-semibold text-white hover:bg-teal/90 transition-colors"
+                href="/#contact"
+                className="inline-flex items-center rounded-sm border border-gold/40 px-5 py-2 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
                 onClick={() => setOpen(false)}
               >
-                Investor Consultation
+                Get in touch
               </Link>
             </li>
           </ul>

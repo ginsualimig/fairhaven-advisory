@@ -96,6 +96,8 @@ interface GoldLineSectionHeadingProps {
   heading: string;
   description?: string;
   className?: string;
+  headingClassName?: string;
+  labelClassName?: string;
 }
 
 export function GoldLineSectionHeading({
@@ -103,6 +105,8 @@ export function GoldLineSectionHeading({
   heading,
   description,
   className,
+  headingClassName,
+  labelClassName,
 }: GoldLineSectionHeadingProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
@@ -112,7 +116,7 @@ export function GoldLineSectionHeading({
       <div ref={ref}>
         {label && (
           <span
-            className="text-xs font-semibold uppercase text-teal"
+            className={`text-xs font-semibold uppercase ${labelClassName ?? "text-teal"}`}
             style={{ letterSpacing: "0.5px" }}
           >
             {label}
@@ -120,7 +124,7 @@ export function GoldLineSectionHeading({
         )}
         <div className="relative inline-block mt-2">
           <h2
-            className="text-3xl md:text-4xl font-bold text-navy"
+            className={`text-3xl md:text-4xl font-bold ${headingClassName ?? "text-navy"}`}
             style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
           >
             {heading}

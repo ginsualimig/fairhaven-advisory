@@ -1,18 +1,17 @@
 import Link from "next/link";
 
 const footerLinks = {
-  "What We Do": [
-    { href: "/#what-we-do", label: "Acquisition" },
-    { href: "/#what-we-do", label: "Operations" },
-    { href: "/#what-we-do", label: "Turnarounds" },
-    { href: "/#what-we-do", label: "Network Access" },
+  "Work": [
+    { href: "/#what-we-do", label: "What We Do" },
+    { href: "/#process", label: "Our Process" },
+    { href: "/#cases", label: "Cases" },
+    { href: "/#expertise", label: "Expertise" },
   ],
   "Company": [
-    { href: "/#portfolio", label: "Portfolio" },
-    { href: "/#approach", label: "Our Approach" },
+    { href: "/#thinking", label: "Our Thinking" },
     { href: "/#team", label: "Team" },
     { href: "/insights", label: "Insights" },
-    { href: "/#get-started", label: "Get Started" },
+    { href: "/#contact", label: "Get in Touch" },
   ],
 };
 
@@ -24,14 +23,11 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="text-gold font-bold text-xl mb-3">Fairhaven Advisory</div>
-            <p className="text-sm leading-relaxed max-w-xs mb-4">
-              Operational partners for investors and business owners across NZ and Australia.
-              We source, acquire, operate, and scale businesses on your behalf.
+            <p className="text-sm leading-relaxed max-w-xs mb-6">
+              Strategic operators working with investors and business owners across New Zealand and Australia.
             </p>
             <p className="text-xs text-offwhite/40 leading-relaxed max-w-xs">
-              Fairhaven Advisory Ltd is not a licensed immigration adviser. AIP pathway content is
-              educational only. All investment activities are subject to New Zealand and Australian
-              regulatory requirements. Past performance is not indicative of future results.
+              Fairhaven Advisory Ltd. All engagements subject to applicable New Zealand and Australian regulatory requirements.
             </p>
           </div>
 
@@ -62,7 +58,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Fairhaven Advisory Ltd. All rights reserved.
           </p>
           <p className="text-xs text-offwhite/40">
-            Auckland · Wellington · Sydney · Melbourne
+            New Zealand · Australia
           </p>
         </div>
       </div>
