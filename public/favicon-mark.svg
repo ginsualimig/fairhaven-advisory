@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Navy background -->
+  <rect width="512" height="512" fill="#1A3A52"/>
+
+  <!-- Gold bracket mark — geometry extracted from logo-option-c.svg
+       Original brackets in 320x80 viewBox, scaled ~6x and centered in 512x512 -->
+
+  <!-- Top-left bracket -->
+  <rect x="94" y="76" width="108" height="12" fill="#D4AF37"/>
+  <rect x="94" y="76" width="12" height="108" fill="#D4AF37"/>
+
+  <!-- Bottom-right bracket -->
+  <rect x="310" y="424" width="108" height="12" fill="#D4AF37"/>
+  <rect x="406" y="328" width="12" height="108" fill="#D4AF37"/>
+</svg>
