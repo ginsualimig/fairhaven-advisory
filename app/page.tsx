@@ -119,6 +119,7 @@ const teamMembers = [
     name: "Daarshan Kunasegaran",
     title: "Associate",
     bio: "Daarshan supports deal origination, market research, and operational strategy. He has a background in law and commercial advisory, with experience across property and business acquisition.",
+    image: "/headshots/daarshan-kunasegaran.jpg",
   },
   {
     name: "Beatriz Tongco",
