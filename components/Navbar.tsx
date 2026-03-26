@@ -34,7 +34,7 @@ export default function Navbar() {
           <Image
             src="/logos/logo-option-c-white.svg"
             alt="Fairhaven Advisory"
-            width={220}
+            width={240}
             height={45}
             priority
             className="h-9 w-auto"
