@@ -110,7 +110,7 @@ const teamMembers = [
   {
     name: "Ziqi Fan",
     title: "Director",
-    bio: "Ziqi oversees financial analysis, due diligence, and investor relations. She brings experience in financial modelling, transaction structuring, and portfolio management.",
+    bio: "Ziqi Fan leads execution and operational coordination across the group. She keeps priorities, timelines, and stakeholders aligned, ensuring day‑to‑day work runs smoothly across multiple active workstreams.",
   },
   {
     name: "Daarshan Kunasegaran",
