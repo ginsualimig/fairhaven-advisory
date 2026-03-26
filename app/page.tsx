@@ -1,7 +1,16 @@
+"use client";
+
 import HeroSection from "@/components/HeroSection";
 import ServiceCard from "@/components/ServiceCard";
 import CTASection from "@/components/CTASection";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import StatCard from "@/components/StatCard";
+import {
+  AnimatedSection,
+  StaggerContainer,
+  StaggerItem,
+  GoldLineSectionHeading,
+} from "@/components/AnimatedSection";
 
 const featuredServices = [
   {
@@ -49,6 +58,13 @@ const featuredInsights = [
   },
 ];
 
+const stats = [
+  { stat: "98%", label: "Visa approval rate" },
+  { stat: "12+", label: "Years combined experience" },
+  { stat: "200+", label: "Clients advised" },
+  { stat: "NZ-only", label: "Singular focus" },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -61,10 +77,15 @@ export default function HomePage() {
       <section className="bg-offwhite border-b border-stone/10 py-8 px-6">
         <div className="mx-auto max-w-7xl flex flex-wrap items-center justify-center gap-8 text-center">
           {["Licensed Immigration Advisers", "NZ Regulatory Specialists", "End-to-End Advisory", "Confidential & Discreet"].map(
-            (item) => (
-              <span key={item} className="text-sm font-medium text-stone flex items-center gap-2">
-                <span className="text-gold">✦</span> {item}
-              </span>
+            (item, i) => (
+              <AnimatedSection key={item} delay={i * 0.08} direction="up">
+                <span
+                  className="text-sm font-medium text-stone flex items-center gap-2"
+                  style={{ letterSpacing: "0.5px" }}
+                >
+                  <span className="text-gold">✦</span> {item}
+                </span>
+              </AnimatedSection>
             )
           )}
         </div>
@@ -73,20 +94,19 @@ export default function HomePage() {
       {/* Services */}
       <section className="py-20 px-6 bg-offwhite">
         <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <span className="text-xs font-semibold uppercase tracking-widest text-teal">What We Do</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2">
-              Specialist advisory services
-            </h2>
-            <p className="text-stone mt-3 max-w-xl leading-relaxed">
-              We focus exclusively on business immigration and investment pathways — the complex end of New Zealand immigration.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <GoldLineSectionHeading
+            label="What We Do"
+            heading="Specialist advisory services"
+            description="We focus exclusively on business immigration and investment pathways — the complex end of New Zealand immigration."
+            className="mb-12"
+          />
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" staggerMs={50}>
             {featuredServices.map((s) => (
-              <ServiceCard key={s.href} {...s} />
+              <StaggerItem key={s.href}>
+                <ServiceCard {...s} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -94,36 +114,29 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-white">
         <div className="mx-auto max-w-7xl grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-widest text-teal">Why Fairhaven</span>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy mt-2 mb-6">
-              Precision over volume.
-            </h2>
-            <p className="text-stone leading-relaxed mb-4">
-              We take a small number of clients each year. Every engagement receives principal-level attention — not junior adviser delegation.
-            </p>
-            <p className="text-stone leading-relaxed mb-4">
-              Our advisers hold licensed status with the Immigration Advisers Authority and bring commercial backgrounds in finance, law and business operations.
-            </p>
-            <p className="text-stone leading-relaxed">
-              We operate at the intersection of immigration law, business strategy and investment — which is where the most complex and valuable work lives.
-            </p>
+            <GoldLineSectionHeading
+              label="Why Fairhaven"
+              heading="Precision over volume."
+            />
+            <AnimatedSection delay={0.2} className="mt-6">
+              <p className="text-stone leading-relaxed mb-4">
+                We take a small number of clients each year. Every engagement receives principal-level attention — not junior adviser delegation.
+              </p>
+              <p className="text-stone leading-relaxed mb-4">
+                Our advisers hold licensed status with the Immigration Advisers Authority and bring commercial backgrounds in finance, law and business operations.
+              </p>
+              <p className="text-stone leading-relaxed">
+                We operate at the intersection of immigration law, business strategy and investment — which is where the most complex and valuable work lives.
+              </p>
+            </AnimatedSection>
           </div>
-          <div className="grid grid-cols-2 gap-6">
-            {[
-              { stat: "98%", label: "Visa approval rate" },
-              { stat: "12+", label: "Years combined experience" },
-              { stat: "200+", label: "Clients advised" },
-              { stat: "NZ-only", label: "Singular focus" },
-            ].map((item) => (
-              <div
-                key={item.label}
-                className="rounded-lg border border-stone/10 bg-offwhite p-6 text-center"
-              >
-                <div className="text-3xl font-bold text-gold mb-1">{item.stat}</div>
-                <div className="text-sm text-stone">{item.label}</div>
-              </div>
+          <StaggerContainer className="grid grid-cols-2 gap-6" staggerMs={80}>
+            {stats.map((item) => (
+              <StaggerItem key={item.label}>
+                <StatCard stat={item.stat} label={item.label} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 
@@ -131,19 +144,23 @@ export default function HomePage() {
       <section className="py-20 px-6 bg-offwhite">
         <div className="mx-auto max-w-7xl">
           <div className="flex items-end justify-between mb-10">
-            <div>
-              <span className="text-xs font-semibold uppercase tracking-widest text-teal">Insights</span>
-              <h2 className="text-3xl font-bold text-navy mt-2">Latest thinking</h2>
-            </div>
-            <a href="/insights" className="text-sm text-gold hover:underline font-medium hidden sm:block">
-              View all →
-            </a>
+            <GoldLineSectionHeading
+              label="Insights"
+              heading="Latest thinking"
+            />
+            <AnimatedSection delay={0.3}>
+              <a href="/insights" className="text-sm text-gold hover:underline font-medium hidden sm:block">
+                View all →
+              </a>
+            </AnimatedSection>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-6" staggerMs={80}>
             {featuredInsights.map((post) => (
-              <CaseStudyCard key={post.slug} {...post} />
+              <StaggerItem key={post.slug}>
+                <CaseStudyCard {...post} />
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
 

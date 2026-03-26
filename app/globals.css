@@ -5,6 +5,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
 
   /* Fairhaven Advisory Design Tokens */
   --color-navy: #0F172A;
@@ -38,3 +39,60 @@ body {
 .bg-offwhite   { background-color: #F9FAFB; }
 .border-gold   { border-color: #D4AF37; }
 .border-teal   { border-color: #4A9B8E; }
+
+/* Serif font utility */
+.font-serif {
+  font-family: var(--font-playfair, Georgia, serif);
+}
+
+/* Uppercase label letter-spacing */
+.label-uppercase {
+  letter-spacing: 0.5px;
+}
+
+/* Animated Gold Accent Line */
+@keyframes drawLine {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 100%;
+    opacity: 1;
+  }
+}
+
+.gold-accent-line {
+  position: relative;
+  display: inline-block;
+}
+
+.gold-accent-line::after {
+  content: '';
+  display: block;
+  height: 2px;
+  background-color: #D4AF37;
+  width: 0;
+  opacity: 0;
+  margin-top: 8px;
+  transition: none;
+}
+
+.gold-accent-line.animate-line::after {
+  animation: drawLine 0.8s ease forwards;
+}
+
+/* Service card arrow animation */
+.arrow-animate {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.group:hover .arrow-animate {
+  transform: translateX(6px);
+}
+
+/* Stat card tilt - handled via JS/Framer Motion */
+.stat-card-wrapper {
+  perspective: 800px;
+}
