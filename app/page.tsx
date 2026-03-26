@@ -101,56 +101,26 @@ const processSteps = [
   },
 ];
 
-const cases = [
-  {
-    name: "Wellington Trade Supplies Co.",
-    tagline: "Trade wholesale — Wellington",
-    story: [
-      "The business had a loyal customer base, reliable supplier relationships, and an owner approaching retirement. It was well-run and quiet. The kind of business that doesn't attract attention — which is exactly why it appealed to us.",
-      "We acquired it off-market, spent time with the outgoing owner understanding the customer relationships and the informal systems that held the business together, and transitioned carefully. We kept what was working and built structure around it.",
-      "Over time, the business became more capable: better systems, a broader product range, a team that didn't need the owner to be in the room for decisions to be made. It operates well. That's the outcome we were looking for.",
-    ],
-  },
-  {
-    name: "Hospitality Group, Auckland",
-    tagline: "Multi-site hospitality — Auckland",
-    story: [
-      "We were brought in to a multi-site operation that had grown faster than its management structure. The revenues were there; the organisation wasn't keeping up. Staff turnover was high, margins were inconsistent, and no one had full visibility across the group.",
-      "We installed a general manager, standardised the operating model across sites, and rebuilt the supplier relationships from the ground up. The changes weren't dramatic — they were methodical. Most of the work was in the details.",
-      "The business stabilised, then found its footing. The team became more settled, the operations more predictable. It's the kind of work that doesn't make for a compelling story in the moment, but produces a business that runs reliably.",
-    ],
-  },
-  {
-    name: "Logistics Business, Auckland South",
-    tagline: "Last-mile delivery — Auckland",
-    story: [
-      "A last-mile delivery business with strong route density and a capable founder who had built something real — but who had reached the limits of what one person could manage. The business needed infrastructure: technology, structure, and professional operations leadership.",
-      "We came in as an operational partner. The founder stayed involved strategically. We hired a operations leader, implemented route optimisation, and built the team and process layer that the business had been operating without.",
-      "The business became more capable and more scalable. The founder had a partner who could run the day-to-day. What had been a ceiling became a platform.",
-    ],
-  },
-];
-
 const teamMembers = [
   {
-    name: "James Whitfield",
-    title: "Managing Partner",
-    tagline: "Leads acquisitions and investor partnerships across the portfolio.",
+    name: "Petrus Yen",
+    title: "Director",
+    bio: "Petrus leads acquisitions and capital structuring across the group. He has a background in investment, corporate advisory, and cross-border transactions, with a focus on property and infrastructure assets in New Zealand and Australia.",
   },
   {
-    name: "Sarah Chen",
-    title: "Head of Operations",
-    tagline: "Oversees operational management and team development across portfolio businesses.",
+    name: "Ziqi Fan",
+    title: "Director",
+    bio: "Ziqi oversees financial analysis, due diligence, and investor relations. She brings experience in financial modelling, transaction structuring, and portfolio management.",
   },
   {
-    name: "Marcus O'Brien",
-    title: "Partner",
-    tagline: "Manages capital structures and investor relationships.",
+    name: "Daarshan Kunasegaran",
+    title: "Associate",
+    bio: "Daarshan supports deal origination, market research, and operational strategy. He has a background in law and commercial advisory, with experience across property and business acquisition.",
   },
   {
-    name: "Priya Nair",
-    title: "Director, Business Development",
-    tagline: "Leads sourcing, vendor relationships, and deal origination.",
+    name: "Beatriz Tongco",
+    title: "Associate",
+    bio: "Beatriz manages operations, project coordination, and stakeholder communications. She brings strong organisational and analytical capabilities across multiple active workstreams.",
   },
 ];
 
@@ -245,7 +215,7 @@ export default function HomePage() {
       {/* HERO */}
       <HeroSection
         heading="We operate businesses strategically."
-        subheading="Fairhaven Advisory works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
+        subheading="Fairhaven Property Group Limited works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
         ctaLabel="Get in touch"
         ctaHref="/#contact"
       />
@@ -342,75 +312,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CASES */}
-      <section id="cases" className="py-28 px-6 bg-offwhite scroll-mt-20">
-        <div className="mx-auto max-w-7xl">
-          <AnimatedSection className="mb-16">
-            <GoldLineSectionHeading
-              label="Cases"
-              heading="Operational stories."
-              description="A selection of businesses we have worked with. Names and details are illustrative; specifics available in conversation."
-            />
-          </AnimatedSection>
-          <div className="space-y-12">
-            {cases.map((c, i) => (
-              <AnimatedSection key={c.name} delay={i * 0.1}>
-                <div className="bg-white border border-stone/10 rounded-sm p-10 lg:p-14">
-                  <div className="mb-6">
-                    <h3
-                      className="text-2xl font-bold text-navy mb-1"
-                      style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-                    >
-                      {c.name}
-                    </h3>
-                    <p className="text-teal text-xs font-semibold uppercase tracking-widest">{c.tagline}</p>
-                  </div>
-                  <div className="space-y-5">
-                    {c.story.map((para, j) => (
-                      <p key={j} className="text-stone leading-relaxed">
-                        {para}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* TEAM */}
-      <section id="team" className="py-28 px-6 bg-white scroll-mt-20">
-        <div className="mx-auto max-w-7xl">
-          <AnimatedSection className="mb-16">
-            <GoldLineSectionHeading
-              label="Team"
-              heading="The people behind the work."
-            />
-          </AnimatedSection>
-          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10" staggerMs={60}>
-            {teamMembers.map((member) => (
-              <StaggerItem key={member.name}>
-                <div className="group">
-                  {/* Avatar placeholder */}
-                  <div className="w-20 h-20 rounded-full bg-navy/8 border border-stone/15 group-hover:border-gold/30 transition-colors mb-5 flex items-center justify-center">
-                    <span
-                      className="text-xl font-bold text-navy/30"
-                      style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-                    >
-                      {member.name.split(" ").map((n) => n[0]).join("")}
-                    </span>
-                  </div>
-                  <h3 className="text-base font-bold text-navy mb-0.5">{member.name}</h3>
-                  <p className="text-teal text-xs font-semibold uppercase tracking-wide mb-3">{member.title}</p>
-                  <p className="text-stone text-sm leading-relaxed">{member.tagline}</p>
-                </div>
-              </StaggerItem>
-            ))}
-          </StaggerContainer>
-        </div>
-      </section>
-
       {/* EXPERTISE */}
       <section id="expertise" className="py-28 px-6 bg-navy scroll-mt-20">
         <div className="mx-auto max-w-7xl">
@@ -495,6 +396,38 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* TEAM */}
+      <section id="team" className="py-28 px-6 bg-white scroll-mt-20">
+        <div className="mx-auto max-w-7xl">
+          <AnimatedSection className="mb-16">
+            <GoldLineSectionHeading
+              label="Team"
+              heading="The people behind the work."
+            />
+          </AnimatedSection>
+          <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10" staggerMs={60}>
+            {teamMembers.map((member) => (
+              <StaggerItem key={member.name}>
+                <div className="group">
+                  {/* Avatar placeholder */}
+                  <div className="w-20 h-20 rounded-full bg-navy/8 border border-stone/15 group-hover:border-gold/30 transition-colors mb-5 flex items-center justify-center">
+                    <span
+                      className="text-xl font-bold text-navy/30"
+                      style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+                    >
+                      {member.name.split(" ").map((n) => n[0]).join("")}
+                    </span>
+                  </div>
+                  <h3 className="text-base font-bold text-navy mb-0.5">{member.name}</h3>
+                  <p className="text-teal text-xs font-semibold uppercase tracking-wide mb-3">{member.title}</p>
+                  <p className="text-stone text-sm leading-relaxed">{member.bio}</p>
+                </div>
+              </StaggerItem>
+            ))}
+          </StaggerContainer>
+        </div>
+      </section>
+
       {/* CONTACT */}
       <section id="contact" className="py-28 px-6 bg-navy scroll-mt-20">
         <div className="mx-auto max-w-7xl">
@@ -509,12 +442,12 @@ export default function HomePage() {
                 />
                 <div className="mt-6 space-y-4 text-offwhite/60 leading-relaxed text-sm">
                   <p>
-                    We work with serious investors and business owners. If you are looking for a partner with operational depth, reach out.
+                    We work with operators, business owners, and capital providers building and scaling ventures across property, infrastructure, and allied sectors in NZ and Australia. If you're exploring a deal or seeking strategic advice, get in touch.
                   </p>
                   <p>
                     Or write to us directly at{" "}
-                    <a href="mailto:intro@fairhavenadvisory.co.nz" className="text-gold hover:text-gold/80 transition-colors">
-                      intro@fairhavenadvisory.co.nz
+                    <a href="mailto:intro@fairhavenproperty.co.nz" className="text-gold hover:text-gold/80 transition-colors">
+                      intro@fairhavenproperty.co.nz
                     </a>
                   </p>
                 </div>

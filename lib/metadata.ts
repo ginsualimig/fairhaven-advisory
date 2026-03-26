@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
-const SITE_NAME = "Fairhaven Advisory";
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fairhavenadvisory.co.nz";
+const SITE_NAME = "Fairhaven Property Group";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fairhavenproperty.co.nz";
 const DEFAULT_DESCRIPTION =
-  "Fairhaven Advisory partners with investors and business owners across NZ and Australia to source, acquire, operate, and scale profitable businesses. We operate, not advise.";
+  "Fairhaven Property Group Limited partners with investors and business owners across NZ and Australia to source, acquire, operate, and scale ventures across property, infrastructure, and allied sectors.";
 
 export function buildMetadata(overrides: Partial<Metadata> & { slug?: string } = {}): Metadata {
   const { slug, ...rest } = overrides;
@@ -12,7 +12,7 @@ export function buildMetadata(overrides: Partial<Metadata> & { slug?: string } =
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: `${SITE_NAME} | Operational Partners for NZ & AU Business Acquisition`,
+      default: `${SITE_NAME} | Property & Infrastructure Partners — NZ & Australia`,
       template: `%s | ${SITE_NAME}`,
     },
     description: DEFAULT_DESCRIPTION,

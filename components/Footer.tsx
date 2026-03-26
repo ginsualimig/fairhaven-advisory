@@ -4,7 +4,6 @@ const footerLinks = {
   "Work": [
     { href: "/#what-we-do", label: "What We Do" },
     { href: "/#process", label: "Our Process" },
-    { href: "/#cases", label: "Cases" },
     { href: "/#expertise", label: "Expertise" },
   ],
   "Company": [
@@ -22,12 +21,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-gold font-bold text-xl mb-3">Fairhaven Advisory</div>
+            <div className="text-gold font-bold text-xl mb-3">Fairhaven Property Group</div>
             <p className="text-sm leading-relaxed max-w-xs mb-6">
               Strategic operators working with investors and business owners across New Zealand and Australia.
             </p>
             <p className="text-xs text-offwhite/40 leading-relaxed max-w-xs">
-              Fairhaven Advisory Ltd. All engagements subject to applicable New Zealand and Australian regulatory requirements.
+              Fairhaven Property Group Limited. Company No. [NZBN PLACEHOLDER]. All engagements subject to applicable New Zealand and Australian regulatory requirements.
             </p>
           </div>
 
@@ -55,7 +54,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-gold/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-offwhite/40">
-            © {new Date().getFullYear()} Fairhaven Advisory Ltd. All rights reserved.
+            © {new Date().getFullYear()} Fairhaven Property Group Limited. All rights reserved.
           </p>
           <p className="text-xs text-offwhite/40">
             New Zealand · Australia

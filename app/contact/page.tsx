@@ -30,7 +30,7 @@ export default function ContactPage() {
             Start a conversation.
           </h1>
           <p className="text-offwhite/65 text-lg max-w-xl leading-relaxed">
-            We work with serious investors and business owners. If you are looking for a partner with operational depth, reach out.
+            We work with operators, business owners, and capital providers building and scaling ventures across property, infrastructure, and allied sectors in NZ and Australia. If you're exploring a deal or seeking strategic advice, get in touch.
           </p>
         </div>
       </section>
@@ -97,8 +97,8 @@ export default function ContactPage() {
           <div className="space-y-10">
             <div>
               <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-2">Email</div>
-              <a href="mailto:intro@fairhavenadvisory.co.nz" className="text-navy hover:text-teal transition-colors text-sm">
-                intro@fairhavenadvisory.co.nz
+              <a href="mailto:intro@fairhavenproperty.co.nz" className="text-navy hover:text-teal transition-colors text-sm">
+                intro@fairhavenproperty.co.nz
               </a>
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
             </div>
             <div className="pt-6 border-t border-stone/10">
               <p className="text-xs text-stone leading-relaxed">
-                Fairhaven Advisory Ltd. All engagements subject to applicable New Zealand and Australian regulatory requirements.
+                Fairhaven Property Group Limited. Company No. [NZBN PLACEHOLDER]. All engagements subject to applicable New Zealand and Australian regulatory requirements.
               </p>
             </div>
           </div>

@@ -1,0 +1,36 @@
+<!-- 
+  Fairhaven Property Group – Logo Option A
+  Concept: "FP" initials in Playfair-inspired serif, with property-division negative space
+  The crossbar of F and left stroke of P create a subtle house/lot boundary negative space
+  Colors: Navy #1A3A52 + Gold #D4AF37
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Property Group">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Mark: FP monogram with negative-space property division -->
+  <!-- F glyph -->
+  <rect x="8" y="12" width="3.5" height="56" fill="#1A3A52"/>
+  <rect x="8" y="12" width="28" height="3.5" fill="#1A3A52"/>
+  <rect x="8" y="33.25" width="22" height="3.5" fill="#1A3A52"/>
+  <!-- Gold accent line: the "property division" crossbar -->
+  <rect x="8" y="33.25" width="22" height="1.5" fill="#D4AF37"/>
+
+  <!-- P glyph -->
+  <rect x="46" y="12" width="3.5" height="56" fill="#1A3A52"/>
+  <rect x="46" y="12" width="22" height="3.5" fill="#1A3A52"/>
+  <rect x="64.5" y="12" width="3.5" height="22" fill="#1A3A52"/>
+  <rect x="46" y="30.5" width="22" height="3.5" fill="#1A3A52"/>
+  <!-- Rounded top of P – simulated with rectangles -->
+  <!-- Gold negative-space slash between F and P: property boundary -->
+  <rect x="41" y="20" width="1.5" height="40" fill="#D4AF37" opacity="0.6"/>
+
+  <!-- Wordmark -->
+  <text x="84" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#1A3A52" letter-spacing="0.5">FAIRHAVEN</text>
+  <text x="84" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="400" fill="#1A3A52" letter-spacing="3">PROPERTY GROUP</text>
+  <!-- Gold rule between name lines -->
+  <rect x="84" y="41.5" width="220" height="0.75" fill="#D4AF37" opacity="0.5"/>
+</svg>

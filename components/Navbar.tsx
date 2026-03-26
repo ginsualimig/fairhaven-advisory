@@ -7,7 +7,6 @@ const navLinks = [
   { href: "/#thinking", label: "Our Thinking" },
   { href: "/#what-we-do", label: "What We Do" },
   { href: "/#process", label: "Our Process" },
-  { href: "/#cases", label: "Cases" },
   { href: "/#team", label: "Team" },
   { href: "/insights", label: "Insights" },
 ];
@@ -21,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-offwhite font-semibold text-lg tracking-wide">
           <span className="text-gold font-bold text-xl">FH</span>
-          Fairhaven Advisory
+          Fairhaven Property Group
         </Link>
 
         {/* Desktop links */}
