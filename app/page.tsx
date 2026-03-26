@@ -8,6 +8,7 @@ import {
   GoldLineSectionHeading,
 } from "@/components/AnimatedSection";
 import Link from "next/link";
+import Image from "next/image";
 
 
 // ── Icons ───────────────────────────────────────────────────────────────────────
@@ -111,6 +112,7 @@ const teamMembers = [
     name: "Ziqi Fan",
     title: "Director",
     bio: "Ziqi Fan leads execution and operational coordination across the group. She keeps priorities, timelines, and stakeholders aligned, ensuring day‑to‑day work runs smoothly across multiple active workstreams.",
+    image: "/headshots/ziqi-fan.jpg",
   },
   {
     name: "Daarshan Kunasegaran",
@@ -332,14 +334,24 @@ export default function HomePage() {
             {teamMembers.map((member) => (
               <StaggerItem key={member.name}>
                 <div className="group">
-                  {/* Avatar placeholder */}
-                  <div className="w-20 h-20 rounded-full bg-navy/8 border border-stone/15 group-hover:border-gold/30 transition-colors mb-5 flex items-center justify-center">
-                    <span
-                      className="text-xl font-bold text-navy/30"
-                      style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-                    >
-                      {member.name.split(" ").map((n) => n[0]).join("")}
-                    </span>
+                  {/* Avatar */}
+                  <div className="w-20 h-20 rounded-full bg-navy/8 border border-stone/15 group-hover:border-gold/30 transition-colors mb-5 flex items-center justify-center overflow-hidden">
+                    {"image" in member && member.image ? (
+                      <Image
+                        src={member.image as string}
+                        alt={member.name}
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <span
+                        className="text-xl font-bold text-navy/30"
+                        style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+                      >
+                        {member.name.split(" ").map((n) => n[0]).join("")}
+                      </span>
+                    )}
                   </div>
                   <h3 className="text-base font-bold text-navy mb-0.5">{member.name}</h3>
                   <p className="text-teal text-xs font-semibold uppercase tracking-wide mb-3">{member.title}</p>
