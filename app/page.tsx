@@ -125,6 +125,7 @@ const teamMembers = [
     name: "Beatriz Tongco",
     title: "Associate",
     bio: "Beatriz manages operations, project coordination, and stakeholder communications. She brings strong organisational and analytical capabilities across multiple active workstreams.",
+    image: "/headshots/beatriz-tongco.jpg",
   },
 ];
 
