@@ -111,20 +111,20 @@ const teamMembers = [
   },
   {
     name: "Ziqi Fan",
-    title: "Director",
-    bio: "Ziqi Fan leads execution and operational coordination across the group. She keeps priorities, timelines, and stakeholders aligned, ensuring day‑to‑day work runs smoothly across multiple active workstreams.",
+    title: "Operations & Coordination",
+    bio: "Ziqi Fan leads execution and coordination across the group. She keeps priorities, timelines, and stakeholders aligned, ensuring day‑to‑day work runs smoothly across multiple active workstreams.",
     image: "/headshots/ziqi-fan.jpg",
   },
   {
     name: "Daarshan Kunasegaran",
-    title: "Associate",
-    bio: "Daarshan supports deal origination, market research, and operational strategy. He has a background in law and commercial advisory, with experience across property and business acquisition.",
+    title: "Financial Analyst",
+    bio: "Daarshan leads financial analysis, reporting, and investment research across the group. He supports opportunity evaluation, investment ideation, and the preparation of client materials, research papers, and transaction documents.",
     image: "/headshots/daarshan-kunasegaran.jpg",
   },
   {
     name: "Beatriz Tongco",
-    title: "Associate",
-    bio: "Beatriz manages operations, project coordination, and stakeholder communications. She brings strong organisational and analytical capabilities across multiple active workstreams.",
+    title: "Portfolio Operations",
+    bio: "Beatriz oversees portfolio operations in New Zealand across the group's assets and operating businesses. She manages inspections, stakeholder matters, and day‑to‑day execution across a diverse operating footprint.",
     image: "/headshots/beatriz-tongco.jpg",
   },
 ];
