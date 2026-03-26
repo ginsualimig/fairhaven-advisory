@@ -20,7 +20,7 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 text-offwhite font-semibold text-lg tracking-wide">
           <span className="text-gold font-bold text-xl">FH</span>
-          Fairhaven Property Group
+          Fairhaven Advisory
         </Link>
 
         {/* Desktop links */}

@@ -1,5 +1,5 @@
 <!-- Option A – White version for dark/navy backgrounds -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Property Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Advisory">
   <rect x="8" y="12" width="3.5" height="56" fill="#FFFFFF"/>
   <rect x="8" y="12" width="28" height="3.5" fill="#FFFFFF"/>
   <rect x="8" y="33.25" width="22" height="3.5" fill="#FFFFFF"/>
@@ -9,5 +9,5 @@
   <rect x="46" y="30.5" width="22" height="3.5" fill="#FFFFFF"/>
   <rect x="41" y="20" width="1.5" height="40" fill="#D4AF37" opacity="0.8"/>
   <text x="84" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#FFFFFF" letter-spacing="0.5">FAIRHAVEN</text>
-  <text x="84" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="400" fill="#D4AF37" letter-spacing="3">PROPERTY GROUP</text>
+  <text x="84" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="400" fill="#D4AF37" letter-spacing="3">ADVISORY</text>
 </svg>

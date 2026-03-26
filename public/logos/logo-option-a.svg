@@ -1,10 +1,10 @@
 <!-- 
-  Fairhaven Property Group – Logo Option A
+  Fairhaven Advisory – Logo Option A
   Concept: "FP" initials in Playfair-inspired serif, with property-division negative space
   The crossbar of F and left stroke of P create a subtle house/lot boundary negative space
   Colors: Navy #1A3A52 + Gold #D4AF37
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Property Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Advisory">
   <defs>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&amp;display=swap');
@@ -30,7 +30,7 @@
 
   <!-- Wordmark -->
   <text x="84" y="38" font-family="Georgia, 'Times New Roman', serif" font-size="17" font-weight="700" fill="#1A3A52" letter-spacing="0.5">FAIRHAVEN</text>
-  <text x="84" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="400" fill="#1A3A52" letter-spacing="3">PROPERTY GROUP</text>
+  <text x="84" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="11.5" font-weight="400" fill="#1A3A52" letter-spacing="3">ADVISORY</text>
   <!-- Gold rule between name lines -->
   <rect x="84" y="41.5" width="220" height="0.75" fill="#D4AF37" opacity="0.5"/>
 </svg>

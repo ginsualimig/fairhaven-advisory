@@ -107,7 +107,7 @@ export default function ContactPage() {
             </div>
             <div className="pt-6 border-t border-stone/10">
               <p className="text-xs text-stone leading-relaxed">
-                Fairhaven Property Group Limited. Company No. [NZBN PLACEHOLDER]. All engagements subject to applicable New Zealand and Australian regulatory requirements.
+                All engagements subject to applicable New Zealand and Australian regulatory requirements.
               </p>
             </div>
           </div>

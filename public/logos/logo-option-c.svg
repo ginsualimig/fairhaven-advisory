@@ -1,11 +1,11 @@
 <!-- 
-  Fairhaven Property Group – Logo Option C
-  Concept: Wordmark-only — "Fairhaven Property Group" in Playfair-inspired serif
+  Fairhaven Advisory – Logo Option C
+  Concept: Wordmark-only — "Fairhaven Advisory" in Playfair-inspired serif
   with a subtle geometric accent: a single gold corner-bracket (like a property survey mark)
   positioned at top-left of the wordmark.
   Colors: Navy #1A3A52 + Gold #D4AF37
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 80" fill="none" role="img" aria-label="Fairhaven Property Group">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Advisory">
 
   <!-- Gold corner-bracket accent (survey/site mark) -->
   <!-- Top-left corner bracket -->
@@ -17,11 +17,8 @@
 
   <!-- Primary wordmark -->
   <text x="78" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#1A3A52" letter-spacing="1">FAIRHAVEN</text>
-  <text x="78" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="400" fill="#1A3A52" letter-spacing="3.5">PROPERTY GROUP</text>
+  <text x="78" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="400" fill="#1A3A52" letter-spacing="3.5">ADVISORY</text>
 
   <!-- Thin gold rule between lines -->
-  <rect x="78" y="40.5" width="254" height="0.75" fill="#D4AF37" opacity="0.6"/>
-
-  <!-- Small "LIMITED" text far right, very subtle -->
-  <text x="296" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="7.5" font-weight="400" fill="#1A3A52" letter-spacing="1" opacity="0.55">LTD</text>
+  <rect x="78" y="40.5" width="220" height="0.75" fill="#D4AF37" opacity="0.6"/>
 </svg>

@@ -215,7 +215,7 @@ export default function HomePage() {
       {/* HERO */}
       <HeroSection
         heading="We operate businesses strategically."
-        subheading="Fairhaven Property Group Limited works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
+        subheading="Fairhaven Advisory works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
         ctaLabel="Get in touch"
         ctaHref="/#contact"
       />

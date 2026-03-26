@@ -21,12 +21,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="text-gold font-bold text-xl mb-3">Fairhaven Property Group</div>
+            <div className="text-gold font-bold text-xl mb-3">Fairhaven Advisory</div>
             <p className="text-sm leading-relaxed max-w-xs mb-6">
               Strategic operators working with investors and business owners across New Zealand and Australia.
-            </p>
-            <p className="text-xs text-offwhite/40 leading-relaxed max-w-xs">
-              Fairhaven Property Group Limited. Company No. [NZBN PLACEHOLDER]. All engagements subject to applicable New Zealand and Australian regulatory requirements.
             </p>
           </div>
 
