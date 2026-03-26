@@ -7,9 +7,9 @@
   <rect x="62" y="52" width="2" height="18" fill="#D4AF37"/>
 
   <!-- Primary wordmark -->
-  <text x="78" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="1">FAIRHAVEN</text>
-  <text x="78" y="63" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="400" fill="#D4AF37" letter-spacing="3.5">ADVISORY</text>
+  <text x="78" y="34" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700" fill="#FFFFFF" letter-spacing="1">FAIRHAVEN</text>
+  <text x="78" y="70" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="400" fill="#D4AF37" letter-spacing="3.5">ADVISORY</text>
 
   <!-- Thin gold rule between lines -->
-  <rect x="78" y="42" width="185" height="0.75" fill="#D4AF37" opacity="0.6"/>
+  <rect x="78" y="44" width="185" height="0.75" fill="#D4AF37" opacity="0.6"/>
 </svg>
