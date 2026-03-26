@@ -69,25 +69,6 @@ export default async function InsightPost({ params }: PageProps) {
 
           <ArticleContent sections={article.sections} />
 
-          {/* CTA */}
-          <div className="mt-16 p-8 rounded-lg bg-navy text-center">
-            <h3
-              className="text-2xl font-bold text-offwhite mb-3"
-              style={{ fontFamily: 'var(--font-playfair, Georgia, serif)' }}
-            >
-              Work with us.
-            </h3>
-            <p className="text-offwhite/70 mb-6">
-              Schedule a 15-minute call to discuss your requirements.
-            </p>
-            <Link
-              href="/#get-started"
-              className="inline-flex items-center rounded-sm bg-teal px-8 py-3 text-sm font-semibold text-white hover:bg-teal/90 transition-colors"
-            >
-              Schedule Investor Consultation
-            </Link>
-          </div>
-
           {/* Related Articles */}
           {related.length > 0 && (
             <section className="mt-20 pt-20 border-t border-stone/10">
