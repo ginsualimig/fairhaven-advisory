@@ -1,17 +1,11 @@
-import Link from "next/link";
-
 interface HeroSectionProps {
   heading: string;
   subheading: string;
-  ctaLabel?: string;
-  ctaHref?: string;
 }
 
 export default function HeroSection({
   heading,
   subheading,
-  ctaLabel = "Get in touch",
-  ctaHref = "/#contact",
 }: HeroSectionProps) {
   return (
     <section className="relative bg-navy overflow-hidden">
@@ -29,21 +23,13 @@ export default function HeroSection({
 
       <div className="relative mx-auto max-w-7xl px-6 py-32 md:py-52">
         <div className="max-w-3xl">
-          <h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-offwhite leading-tight mb-8"
-            style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-          >
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-serif text-offwhite leading-tight mb-8">
             {heading}
           </h1>
           <p className="text-offwhite/65 text-lg md:text-xl leading-relaxed mb-12 max-w-2xl">
             {subheading}
           </p>
-          <Link
-            href={ctaHref}
-            className="inline-flex items-center rounded-sm border border-gold/50 px-8 py-3.5 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
-          >
-            {ctaLabel}
-          </Link>
+
         </div>
       </div>
 

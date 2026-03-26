@@ -8,7 +8,7 @@ import {
   GoldLineSectionHeading,
 } from "@/components/AnimatedSection";
 import Link from "next/link";
-import { useState } from "react";
+
 
 // ── Icons ───────────────────────────────────────────────────────────────────────
 const AcquisitionIcon = () => (
@@ -133,81 +133,6 @@ const expertise = [
   "E-commerce",
 ];
 
-// ── Contact Form ────────────────────────────────────────────────────────────────
-function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
-
-  function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  }
-
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    setSubmitted(true);
-  }
-
-  if (submitted) {
-    return (
-      <div className="text-center py-12">
-        <p className="text-offwhite/80 text-lg mb-2">Thank you.</p>
-        <p className="text-offwhite/50 text-sm">We'll be in touch.</p>
-      </div>
-    );
-  }
-
-  return (
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <div>
-          <label className="block text-offwhite/60 text-xs uppercase tracking-widest mb-2">Name</label>
-          <input
-            type="text"
-            name="name"
-            required
-            value={form.name}
-            onChange={handleChange}
-            className="w-full bg-white/5 border border-gold/20 rounded-sm px-4 py-3 text-offwhite text-sm placeholder:text-offwhite/30 focus:outline-none focus:border-gold/50 transition-colors"
-            placeholder="Your name"
-          />
-        </div>
-        <div>
-          <label className="block text-offwhite/60 text-xs uppercase tracking-widest mb-2">Email</label>
-          <input
-            type="email"
-            name="email"
-            required
-            value={form.email}
-            onChange={handleChange}
-            className="w-full bg-white/5 border border-gold/20 rounded-sm px-4 py-3 text-offwhite text-sm placeholder:text-offwhite/30 focus:outline-none focus:border-gold/50 transition-colors"
-            placeholder="your@email.com"
-          />
-        </div>
-      </div>
-      <div>
-        <label className="block text-offwhite/60 text-xs uppercase tracking-widest mb-2">Message</label>
-        <textarea
-          name="message"
-          required
-          rows={5}
-          value={form.message}
-          onChange={handleChange}
-          className="w-full bg-white/5 border border-gold/20 rounded-sm px-4 py-3 text-offwhite text-sm placeholder:text-offwhite/30 focus:outline-none focus:border-gold/50 transition-colors resize-none"
-          placeholder="Tell us about your situation."
-        />
-      </div>
-      <div>
-        <button
-          type="submit"
-          className="inline-flex items-center rounded-sm border border-gold/50 px-8 py-3.5 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
-        >
-          Send
-        </button>
-      </div>
-    </form>
-  );
-}
-
 // ── Page ────────────────────────────────────────────────────────────────────────
 export default function HomePage() {
   return (
@@ -216,8 +141,6 @@ export default function HomePage() {
       <HeroSection
         heading="We operate businesses strategically."
         subheading="Fairhaven Advisory works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
-        ctaLabel="Get in touch"
-        ctaHref="/#contact"
       />
 
       {/* OUR THINKING */}
@@ -428,37 +351,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CONTACT */}
-      <section id="contact" className="py-28 px-6 bg-navy scroll-mt-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-            <div className="lg:col-span-4">
-              <AnimatedSection direction="left">
-                <GoldLineSectionHeading
-                  label="Get in Touch"
-                  heading="Start a conversation."
-                  headingClassName="text-offwhite"
-                  labelClassName="text-teal"
-                />
-                <div className="mt-6 space-y-4 text-offwhite/60 leading-relaxed text-sm">
-                  <p>
-                    We work with operators, business owners, and capital providers building and scaling ventures across property, infrastructure, and allied sectors in NZ and Australia. If you're exploring a deal or seeking strategic advice, get in touch.
-                  </p>
-                  <p>
-                    Or write to us directly at{" "}
-                    <a href="mailto:contact@fairhavenadvisory.co.nz" className="text-gold hover:text-gold/80 transition-colors">
-                      contact@fairhavenadvisory.co.nz
-                    </a>
-                  </p>
-                </div>
-              </AnimatedSection>
-            </div>
-            <AnimatedSection delay={0.15} className="lg:col-span-8">
-              <ContactForm />
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
     </>
   );
 }

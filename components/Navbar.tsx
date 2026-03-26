@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const navLinks = [
   { href: "/#thinking", label: "Our Thinking" },
@@ -13,14 +14,31 @@ const navLinks = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gold/20 bg-navy/95 backdrop-blur">
+    <header
+      className={`sticky top-0 z-50 w-full border-b border-gold/20 bg-navy/95 backdrop-blur transition-shadow duration-300 ${
+        scrolled ? "shadow-[0_2px_16px_0_rgba(0,0,0,0.35)]" : "shadow-none"
+      }`}
+    >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 text-offwhite font-semibold text-lg tracking-wide">
-          <span className="text-gold font-bold text-xl">FH</span>
-          Fairhaven Advisory
+        {/* Logo Option C wordmark */}
+        <Link href="/" className="flex items-center" aria-label="Fairhaven Advisory">
+          <Image
+            src="/logos/logo-option-c-white.svg"
+            alt="Fairhaven Advisory"
+            width={180}
+            height={45}
+            priority
+            className="h-9 w-auto"
+          />
         </Link>
 
         {/* Desktop links */}
@@ -36,14 +54,6 @@ export default function Navbar() {
             </li>
           ))}
         </ul>
-
-        {/* CTA */}
-        <Link
-          href="/#contact"
-          className="hidden md:inline-flex items-center rounded-sm border border-gold/40 px-5 py-2 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
-        >
-          Get in touch
-        </Link>
 
         {/* Mobile hamburger */}
         <button
@@ -72,15 +82,6 @@ export default function Navbar() {
                 </Link>
               </li>
             ))}
-            <li>
-              <Link
-                href="/#contact"
-                className="inline-flex items-center rounded-sm border border-gold/40 px-5 py-2 text-sm font-medium text-gold hover:border-gold hover:bg-gold/10 transition-colors"
-                onClick={() => setOpen(false)}
-              >
-                Get in touch
-              </Link>
-            </li>
           </ul>
         </div>
       )}

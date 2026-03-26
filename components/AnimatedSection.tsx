@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useEffect, useState } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 interface AnimatedSectionProps {
@@ -115,17 +115,22 @@ export function GoldLineSectionHeading({
     <AnimatedSection direction="left" className={className}>
       <div ref={ref}>
         {label && (
-          <span
-            className={`text-xs font-semibold uppercase ${labelClassName ?? "text-teal"}`}
-            style={{ letterSpacing: "0.5px" }}
+          <motion.span
+            className={`text-xs font-semibold font-serif uppercase tracking-widest ${labelClassName ?? "text-teal"}`}
+            initial={{ textShadow: "0 0 0px rgba(212,175,55,0)" }}
+            animate={
+              isInView
+                ? { textShadow: "0 0 12px rgba(212,175,55,0.45)" }
+                : { textShadow: "0 0 0px rgba(212,175,55,0)" }
+            }
+            transition={{ duration: 0.9, delay: 0.2, ease: "easeOut" }}
           >
             {label}
-          </span>
+          </motion.span>
         )}
         <div className="relative inline-block mt-2">
           <h2
-            className={`text-3xl md:text-4xl font-bold ${headingClassName ?? "text-navy"}`}
-            style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+            className={`text-3xl md:text-4xl font-bold font-serif ${headingClassName ?? "text-navy"}`}
           >
             {heading}
           </h2>
