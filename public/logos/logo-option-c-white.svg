@@ -1,9 +1,15 @@
 <!-- Option C – White + Gold version for dark backgrounds -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" fill="none" role="img" aria-label="Fairhaven Advisory">
+  <!-- Gold corner-bracket accent -->
   <rect x="10" y="10" width="18" height="2" fill="#D4AF37"/>
   <rect x="10" y="10" width="2" height="18" fill="#D4AF37"/>
   <rect x="46" y="68" width="18" height="2" fill="#D4AF37"/>
   <rect x="62" y="52" width="2" height="18" fill="#D4AF37"/>
-  <text x="78" y="36" font-family="Georgia, 'Times New Roman', serif" font-size="18" font-weight="700" fill="#FFFFFF" letter-spacing="1">FAIRHAVEN</text>
-  <text x="78" y="57" font-family="Georgia, 'Times New Roman', serif" font-size="12" font-weight="400" fill="#D4AF37" letter-spacing="3.5">ADVISORY</text>
+
+  <!-- Primary wordmark -->
+  <text x="78" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="23" font-weight="700" fill="#FFFFFF" letter-spacing="1">FAIRHAVEN</text>
+  <text x="78" y="59" font-family="Georgia, 'Times New Roman', serif" font-size="15" font-weight="400" fill="#D4AF37" letter-spacing="3.5">ADVISORY</text>
+
+  <!-- Thin gold rule between lines -->
+  <rect x="78" y="38" width="185" height="0.75" fill="#D4AF37" opacity="0.6"/>
 </svg>
