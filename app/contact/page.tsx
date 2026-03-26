@@ -97,8 +97,8 @@ export default function ContactPage() {
           <div className="space-y-10">
             <div>
               <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-2">Email</div>
-              <a href="mailto:intro@fairhavenproperty.co.nz" className="text-navy hover:text-teal transition-colors text-sm">
-                intro@fairhavenproperty.co.nz
+              <a href="mailto:contact@fairhavenadvisory.co.nz" className="text-navy hover:text-teal transition-colors text-sm">
+                contact@fairhavenadvisory.co.nz
               </a>
             </div>
             <div>

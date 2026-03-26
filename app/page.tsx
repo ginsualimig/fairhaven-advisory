@@ -446,8 +446,8 @@ export default function HomePage() {
                   </p>
                   <p>
                     Or write to us directly at{" "}
-                    <a href="mailto:intro@fairhavenproperty.co.nz" className="text-gold hover:text-gold/80 transition-colors">
-                      intro@fairhavenproperty.co.nz
+                    <a href="mailto:contact@fairhavenadvisory.co.nz" className="text-gold hover:text-gold/80 transition-colors">
+                      contact@fairhavenadvisory.co.nz
                     </a>
                   </p>
                 </div>
