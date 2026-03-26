@@ -1,29 +1,21 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useSpring, useTransform } from "framer-motion";
-
-const tooltipMap: Record<string, string> = {
-  "98%": "Approval rate since 2020",
-  "12+": "Years combined experience",
-  "200+": "Clients successfully advised",
-  "NZ-only": "Singular New Zealand focus",
-};
+import { motion, useSpring } from "framer-motion";
 
 interface StatCardProps {
   stat: string;
   label: string;
+  tooltip?: string;
 }
 
-export default function StatCard({ stat, label }: StatCardProps) {
+export default function StatCard({ stat, label, tooltip }: StatCardProps) {
   const [hovered, setHovered] = useState(false);
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
   const springRotateX = useSpring(rotateX, { stiffness: 200, damping: 20 });
   const springRotateY = useSpring(rotateY, { stiffness: 200, damping: 20 });
-
-  const tooltip = tooltipMap[stat];
 
   function handleMouseMove(e: React.MouseEvent<HTMLDivElement>) {
     const rect = e.currentTarget.getBoundingClientRect();
@@ -45,20 +37,21 @@ export default function StatCard({ stat, label }: StatCardProps) {
     <div style={{ perspective: "800px" }} className="relative">
       <motion.div
         className="rounded-lg border border-stone/10 bg-offwhite p-6 text-center cursor-default select-none"
-        style={{
-          rotateX: springRotateX,
-          rotateY: springRotateY,
-        }}
+        style={{ rotateX: springRotateX, rotateY: springRotateY }}
         whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(15,23,42,0.12)" }}
         transition={{ duration: 0.25 }}
         onMouseEnter={() => setHovered(true)}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
       >
-        <div className="text-3xl font-bold text-gold mb-1">{stat}</div>
+        <div
+          className="text-3xl font-bold text-gold mb-1"
+          style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+        >
+          {stat}
+        </div>
         <div className="text-sm text-stone">{label}</div>
 
-        {/* Tooltip */}
         {tooltip && hovered && (
           <motion.div
             initial={{ opacity: 0, y: 6 }}

@@ -1,79 +1,132 @@
-import type { Metadata } from "next";
-import { buildMetadata } from "@/lib/metadata";
-import CaseStudyCard from "@/components/CaseStudyCard";
-import CTASection from "@/components/CTASection";
+import Link from "next/link";
+import {
+  GoldLineSectionHeading,
+  StaggerContainer,
+  StaggerItem,
+} from "@/components/AnimatedSection";
 
-export const metadata: Metadata = buildMetadata({
-  title: "Insights",
-  description:
-    "Analysis and commentary on New Zealand business immigration, investment pathways, and regulatory developments from Fairhaven Advisory.",
-  slug: "insights",
-});
-
-const posts = [
+const insights = [
   {
-    title: "Active Investor Plus: What Changed in 2024",
-    excerpt:
-      "Immigration New Zealand overhauled the Active Investor Plus visa in late 2023. Here's what the changes mean for applicants — and what they need to do differently.",
-    category: "Investor Visa",
-    slug: "active-investor-plus-2024",
-    date: "15 March 2024",
+    slug: "turnaround-case-study-cafe-group",
+    title: "Turnaround Case Study: Pacific Coast Café Group",
+    excerpt: "How we identified the constraint (centralised purchasing and staff turnover), fixed both in parallel, and restored an 84% revenue trajectory in 18 months.",
+    category: "Turnaround",
+    date: "March 2026",
   },
   {
-    title: "Setting Up a Business in NZ: A Founder's Guide",
-    excerpt:
-      "From registering a company to securing premises and hiring staff — a practical primer for overseas entrepreneurs arriving in New Zealand for the first time.",
-    category: "Entrepreneur",
-    slug: "setting-up-business-nz",
-    date: "8 February 2024",
+    slug: "nz-acquisition-market-q1-2026",
+    title: "NZ Acquisition Market: Q1 2026 Insights",
+    excerpt: "Vendor multiples softening in trade and logistics. Hospitality still distressed. Our current deal pipeline and what we're watching.",
+    category: "Market Intelligence",
+    date: "February 2026",
   },
   {
-    title: "Skilled Migrant Category: Points, Pools and Strategy",
-    excerpt:
-      "The SMC is competitive and unpredictable. This guide explains how Expressions of Interest are ranked, what scores are being selected, and how to maximise your chances.",
-    category: "Skilled Migrant",
-    slug: "smc-strategy-guide",
-    date: "22 January 2024",
+    slug: "evaluate-business-acquisition",
+    title: "How to Evaluate a Business for Acquisition",
+    excerpt: "The 12-point framework we apply to every deal — commercial, financial, and operational red flags before you sign anything.",
+    category: "Acquisition Guide",
+    date: "January 2026",
   },
   {
-    title: "Buying a Business in New Zealand: Immigration Implications",
-    excerpt:
-      "Acquiring an existing NZ business can be the fastest route to eligibility — but only if the acquisition is structured correctly. Key considerations for overseas buyers.",
-    category: "Business Acquisition",
-    slug: "buying-nz-business-immigration",
-    date: "10 December 2023",
+    slug: "turnaround-framework",
+    title: "Business Turnaround Framework",
+    excerpt: "Our diagnostic process for underperforming businesses: how to identify the constraint, prioritise the fix, and execute without destroying culture.",
+    category: "Operations",
+    date: "December 2025",
+  },
+  {
+    slug: "scaling-meridian-trade",
+    title: "From $2.5M to $4.1M: Scaling Meridian Trade Supplies",
+    excerpt: "We acquired an off-market Wellington trade business and scaled it 62% over 24 months. Here's the exact playbook: catalogue expansion, B2B e-commerce, second hub.",
+    category: "Scaling Story",
+    date: "November 2025",
+  },
+  {
+    slug: "operational-team-nz",
+    title: "Building an Operational Team in NZ",
+    excerpt: "How we find, vet, and onboard COOs and GMs in NZ's tight labour market. 12 businesses, 40+ key hires, hard lessons included.",
+    category: "Team Building",
+    date: "October 2025",
+  },
+  {
+    slug: "aip-investor-faq",
+    title: "AIP Investor FAQ: Active Ownership Explained",
+    excerpt: "What INZ actually means by 'active involvement', how we structure acquisitions to satisfy the criteria, and common mistakes that get applications declined.",
+    category: "AIP",
+    date: "September 2025",
+  },
+  {
+    slug: "highbrook-logistics-exit",
+    title: "Exit Case Study: Highbrook Logistics at 3.4x",
+    excerpt: "How a family office investment in a last-mile delivery network returned 3.4x in 30 months via trade sale to an NZX-listed acquirer.",
+    category: "Turnaround",
+    date: "August 2025",
   },
 ];
 
+const categoryColors: Record<string, string> = {
+  "Turnaround": "bg-teal/10 text-teal border-teal/20",
+  "Market Intelligence": "bg-gold/10 text-gold border-gold/20",
+  "Acquisition Guide": "bg-navy/10 text-navy border-navy/20",
+  "Operations": "bg-teal/10 text-teal border-teal/20",
+  "Scaling Story": "bg-gold/10 text-gold border-gold/20",
+  "Team Building": "bg-navy/10 text-navy border-navy/20",
+  "AIP": "bg-stone/10 text-stone border-stone/20",
+};
+
 export default function InsightsPage() {
   return (
-    <>
-      <section className="bg-navy py-20 px-6">
+    <div className="bg-offwhite min-h-screen">
+      {/* Header */}
+      <section className="bg-navy py-20 px-6 border-b border-gold/20">
         <div className="mx-auto max-w-7xl">
-          <span className="text-xs font-semibold uppercase tracking-widest text-gold">Insights</span>
-          <h1 className="text-4xl md:text-5xl font-bold text-offwhite mt-3 mb-4 max-w-2xl leading-tight">
-            Analysis. Commentary. Clarity.
+          <span className="inline-block text-teal text-xs font-semibold tracking-widest uppercase mb-4">
+            Insights
+          </span>
+          <h1
+            className="text-4xl md:text-5xl font-bold text-offwhite mb-4"
+            style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+          >
+            Operational intelligence.
           </h1>
-          <p className="text-offwhite/70 text-lg max-w-xl leading-relaxed">
-            Practical guidance on New Zealand immigration law, investment pathways, and regulatory developments — written for business people, not lawyers.
+          <p className="text-offwhite/70 text-lg max-w-2xl">
+            Case studies, market intelligence, and operational frameworks — written by operators, not marketers.
           </p>
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-offwhite">
+      {/* Articles */}
+      <section className="py-20 px-6">
         <div className="mx-auto max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {posts.map((post) => (
-              <CaseStudyCard key={post.slug} {...post} />
+          <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" staggerMs={50}>
+            {insights.map((post) => (
+              <StaggerItem key={post.slug}>
+                <Link
+                  href={`/insights/${post.slug}`}
+                  className="group block rounded-lg border border-stone/10 bg-white p-8 h-full flex flex-col hover:border-gold/30 transition-colors duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-xs font-semibold px-3 py-1 rounded-full border ${categoryColors[post.category] ?? "bg-stone/10 text-stone border-stone/20"}`}>
+                      {post.category}
+                    </span>
+                    <span className="text-xs text-stone">{post.date}</span>
+                  </div>
+                  <h2
+                    className="text-xl font-bold text-navy mb-3 group-hover:text-teal transition-colors flex-1"
+                    style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
+                  >
+                    {post.title}
+                  </h2>
+                  <p className="text-stone text-sm leading-relaxed mb-4">{post.excerpt}</p>
+                  <span className="inline-flex items-center gap-1 text-sm font-semibold text-gold mt-auto">
+                    Read article →
+                  </span>
+                </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerContainer>
         </div>
       </section>
-
-      <CTASection
-        heading="Questions about your specific situation?"
-        subheading="Our insights cover general guidance. For advice tailored to your circumstances, book a consultation."
-      />
-    </>
+    </div>
   );
 }

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 const SITE_NAME = "Fairhaven Advisory";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://fairhavenadvisory.co.nz";
 const DEFAULT_DESCRIPTION =
-  "Premium NZ business immigration & investment advisory. We help entrepreneurs, investors and families navigate New Zealand's immigration pathways with confidence.";
+  "Fairhaven Advisory partners with investors and business owners across NZ and Australia to source, acquire, operate, and scale profitable businesses. We operate, not advise.";
 
 export function buildMetadata(overrides: Partial<Metadata> & { slug?: string } = {}): Metadata {
   const { slug, ...rest } = overrides;
@@ -12,7 +12,7 @@ export function buildMetadata(overrides: Partial<Metadata> & { slug?: string } =
   return {
     metadataBase: new URL(SITE_URL),
     title: {
-      default: SITE_NAME,
+      default: `${SITE_NAME} | Operational Partners for NZ & AU Business Acquisition`,
       template: `%s | ${SITE_NAME}`,
     },
     description: DEFAULT_DESCRIPTION,

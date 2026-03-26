@@ -1,16 +1,18 @@
 import Link from "next/link";
 
 const footerLinks = {
-  Services: [
-    { href: "/services/investor-visa", label: "Investor Visas" },
-    { href: "/services/entrepreneur-visa", label: "Entrepreneur Visas" },
-    { href: "/services/skilled-migrant", label: "Skilled Migrant" },
-    { href: "/services/business-acquisition", label: "Business Acquisition" },
+  "What We Do": [
+    { href: "/#what-we-do", label: "Acquisition" },
+    { href: "/#what-we-do", label: "Operations" },
+    { href: "/#what-we-do", label: "Turnarounds" },
+    { href: "/#what-we-do", label: "Network Access" },
   ],
-  Company: [
-    { href: "/approach", label: "Our Approach" },
+  "Company": [
+    { href: "/#portfolio", label: "Portfolio" },
+    { href: "/#approach", label: "Our Approach" },
+    { href: "/#team", label: "Team" },
     { href: "/insights", label: "Insights" },
-    { href: "/contact", label: "Contact" },
+    { href: "/#get-started", label: "Get Started" },
   ],
 };
 
@@ -22,9 +24,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <div className="text-gold font-bold text-xl mb-3">Fairhaven Advisory</div>
-            <p className="text-sm leading-relaxed max-w-xs">
-              Premium NZ business immigration & investment advisory. Guiding entrepreneurs,
-              investors and families to New Zealand with confidence.
+            <p className="text-sm leading-relaxed max-w-xs mb-4">
+              Operational partners for investors and business owners across NZ and Australia.
+              We source, acquire, operate, and scale businesses on your behalf.
+            </p>
+            <p className="text-xs text-offwhite/40 leading-relaxed max-w-xs">
+              Fairhaven Advisory Ltd is not a licensed immigration adviser. AIP pathway content is
+              educational only. All investment activities are subject to New Zealand and Australian
+              regulatory requirements. Past performance is not indicative of future results.
             </p>
           </div>
 
@@ -36,7 +43,7 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2">
                 {links.map((l) => (
-                  <li key={l.href}>
+                  <li key={l.label}>
                     <Link
                       href={l.href}
                       className="text-sm hover:text-gold transition-colors"
@@ -55,7 +62,7 @@ export default function Footer() {
             © {new Date().getFullYear()} Fairhaven Advisory Ltd. All rights reserved.
           </p>
           <p className="text-xs text-offwhite/40">
-            Licensed Immigration Adviser · New Zealand
+            Auckland · Wellington · Sydney · Melbourne
           </p>
         </div>
       </div>
