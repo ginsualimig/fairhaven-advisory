@@ -1,0 +1,40 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* Fairhaven Advisory Design Tokens */
+  --color-navy: #0F172A;
+  --color-gold: #D4AF37;
+  --color-teal: #4A9B8E;
+  --color-stone: #6B7280;
+  --color-offwhite: #F9FAFB;
+}
+
+:root {
+  --background: #F9FAFB;
+  --foreground: #0F172A;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Utility classes for brand colors */
+.text-navy    { color: #0F172A; }
+.text-gold     { color: #D4AF37; }
+.text-teal     { color: #4A9B8E; }
+.text-stone    { color: #6B7280; }
+.bg-navy       { background-color: #0F172A; }
+.bg-gold       { background-color: #D4AF37; }
+.bg-teal       { background-color: #4A9B8E; }
+.bg-offwhite   { background-color: #F9FAFB; }
+.border-gold   { border-color: #D4AF37; }
+.border-teal   { border-color: #4A9B8E; }
