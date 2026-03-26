@@ -105,7 +105,7 @@ const processSteps = [
 const teamMembers = [
   {
     name: "Petrus Yen",
-    title: "Director",
+    title: "Managing Director",
     bio: "Petrus leads acquisitions and capital structuring across the group. He has a background in investment, corporate advisory, and cross-border transactions, with a focus on property and infrastructure assets in New Zealand and Australia.",
     image: "/headshots/petrus-yen.jpg",
   },
