@@ -15,6 +15,7 @@ export interface Article {
   featured?: boolean;
   intro: string;
   sections: ArticleSection[];
+  content?: string;
   relatedSlugs?: string[];
 }
 

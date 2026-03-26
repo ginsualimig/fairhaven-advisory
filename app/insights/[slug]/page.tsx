@@ -67,7 +67,7 @@ export default async function InsightPost({ params }: PageProps) {
             {article.intro}
           </p>
 
-          <ArticleContent sections={article.sections} />
+          <ArticleContent sections={article.sections} content={article.content} />
 
           {/* Related Articles */}
           {related.length > 0 && (
