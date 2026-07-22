@@ -9,6 +9,7 @@ const navLinks = [
   { href: "/#what-we-do", label: "What We Do" },
   { href: "/#process", label: "Our Process" },
   { href: "/#team", label: "Team" },
+  { href: "/charity-initiatives", label: "Giving" },
   { href: "/insights", label: "Insights" },
 ];
 

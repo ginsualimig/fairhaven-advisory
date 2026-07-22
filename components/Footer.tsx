@@ -10,6 +10,7 @@ const footerLinks = {
     { href: "/#thinking", label: "Our Thinking" },
     { href: "/#team", label: "Team" },
     { href: "/insights", label: "Insights" },
+    { href: "/charity-initiatives", label: "Giving" },
   ],
 };
 
