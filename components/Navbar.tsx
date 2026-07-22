@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
+import SisterSiteSwitcher from "@/components/SisterSiteSwitcher";
 
 const navLinks = [
   { href: "/#thinking", label: "Our Thinking" },
@@ -29,17 +29,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        {/* Logo Option C wordmark */}
-        <Link href="/" className="flex items-center" aria-label="Fairhaven Advisory">
-          <Image
-            src="/logos/logo-option-c-white.svg"
-            alt="Fairhaven Advisory"
-            width={240}
-            height={45}
-            priority
-            className="h-9 w-auto"
-          />
-        </Link>
+        <SisterSiteSwitcher current="advisory" />
 
         {/* Desktop links */}
         <ul className="hidden md:flex items-center gap-8">
