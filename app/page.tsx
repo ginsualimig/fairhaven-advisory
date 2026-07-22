@@ -46,24 +46,32 @@ const services = [
   {
     icon: <AcquisitionIcon />,
     title: "Acquisition",
+    image: "/images/advisory-hero.webp",
+    imageAlt: "Business operators in a strategy meeting",
     description:
       "We identify and evaluate businesses with rigour. Sourcing is systematic, due diligence is thorough, and deal execution is disciplined. We move carefully and close with conviction.",
   },
   {
     icon: <OperationsIcon />,
     title: "Operations",
+    image: "/images/advisory-operations.webp",
+    imageAlt: "Contemporary building under construction",
     description:
       "We manage businesses with strategic focus. From day-to-day leadership to team building and systems, we take operational ownership seriously. The fundamentals matter.",
   },
   {
     icon: <StrategyIcon />,
     title: "Strategy",
+    image: "/images/advisory-strategy.webp",
+    imageAlt: "Modern commercial buildings viewed from below",
     description:
       "We develop and execute strategy grounded in operational reality. We align leadership, clarify priorities, and translate thinking into disciplined execution.",
   },
   {
     icon: <TurnaroundIcon />,
     title: "Turnarounds",
+    image: "/images/advisory-thinking.webp",
+    imageAlt: "Business leaders working together in a bright office",
     description:
       "We acquire and operate struggling businesses. We find the structural problems, fix what's broken, and build operations that can sustain themselves without constant intervention.",
   },
@@ -146,6 +154,8 @@ export default function HomePage() {
       <HeroSection
         heading="We operate businesses strategically."
         subheading="Fairhaven Advisory works with investors and business owners across New Zealand and Australia to source, acquire, and operate profitable businesses. We bring strategic thinking, operational discipline, and deep networks to every partnership."
+        image="/images/advisory-hero.webp"
+        imageAlt="Business operators in a strategy meeting"
       />
 
       {/* OUR THINKING */}
@@ -172,6 +182,11 @@ export default function HomePage() {
                   Our approach is quiet and deliberate. We do not publicise every deal or broadcast our methods. We focus on the work — and the work speaks for itself.
                 </p>
               </div>
+              <div className="relative mt-10 aspect-[16/7] overflow-hidden rounded-sm bg-navy shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
+                <Image src="/images/advisory-thinking.webp" alt="Business leaders working together in a bright office" fill sizes="(max-width: 1024px) 100vw, 58vw" className="object-cover" />
+                <div className="absolute inset-0 bg-gradient-to-r from-navy/35 to-transparent" />
+                <div className="absolute bottom-5 left-5 border-l border-gold pl-3 text-xs uppercase tracking-[0.18em] text-white/80">Operators first</div>
+              </div>
             </AnimatedSection>
           </div>
         </div>
@@ -189,7 +204,12 @@ export default function HomePage() {
           <StaggerContainer className="grid grid-cols-1 md:grid-cols-2 gap-8" staggerMs={60}>
             {services.map((s) => (
               <StaggerItem key={s.title}>
-                <div className="bg-white rounded-sm border border-stone/10 p-10 h-full hover:border-teal/20 transition-colors duration-300">
+                <div className="group/card h-full overflow-hidden rounded-sm border border-stone/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-teal/30 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
+                  <div className="relative aspect-[16/8] overflow-hidden bg-navy">
+                    <Image src={s.image} alt={s.imageAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover/card:scale-105" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-navy/65 via-transparent to-transparent" />
+                  </div>
+                  <div className="p-8 md:p-10">
                   <div className="mb-5">{s.icon}</div>
                   <h3
                     className="text-xl font-bold text-navy mb-4"
@@ -198,6 +218,7 @@ export default function HomePage() {
                     {s.title}
                   </h3>
                   <p className="text-stone text-sm leading-relaxed">{s.description}</p>
+                  </div>
                 </div>
               </StaggerItem>
             ))}
@@ -304,18 +325,20 @@ export default function HomePage() {
             <AnimatedSection delay={0.1} className="lg:col-span-7">
               <div className="space-y-6">
                 {[
-                  { title: "What We Look for in a Business", category: "Acquisition" },
-                  { title: "The First Ninety Days", category: "Operations" },
-                  { title: "On Building Operational Teams in NZ", category: "Team Building" },
+                  { title: "What We Look for in a Business", category: "Acquisition", image: "/images/advisory-strategy.webp" },
+                  { title: "The First Ninety Days", category: "Operations", image: "/images/advisory-operations.webp" },
+                  { title: "On Building Operational Teams in NZ", category: "Team Building", image: "/images/advisory-insights.webp" },
                 ].map((item) => (
-                  <Link key={item.title} href="/insights" className="group block border-b border-stone/10 pb-6 last:border-0">
-                    <span className="text-teal text-xs font-semibold uppercase tracking-widest mb-2 block">{item.category}</span>
-                    <h3
-                      className="text-lg font-bold text-navy group-hover:text-teal transition-colors"
-                      style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}
-                    >
-                      {item.title}
-                    </h3>
+                  <Link key={item.title} href="/insights" className="group flex items-center gap-4 border-b border-stone/10 pb-6 last:border-0">
+                    <div className="relative h-16 w-24 shrink-0 overflow-hidden rounded-sm bg-navy">
+                      <Image src={item.image} alt="" fill sizes="96px" className="object-cover transition-transform duration-500 group-hover:scale-110" />
+                    </div>
+                    <div>
+                      <span className="mb-2 block text-xs font-semibold uppercase tracking-widest text-teal">{item.category}</span>
+                      <h3 className="text-lg font-bold text-navy transition-colors group-hover:text-teal" style={{ fontFamily: "var(--font-playfair, Georgia, serif)" }}>
+                        {item.title}
+                      </h3>
+                    </div>
                   </Link>
                 ))}
               </div>
