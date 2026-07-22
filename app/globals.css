@@ -47,6 +47,25 @@ body {
   background-size: 80px 80px;
 }
 
+.image-sheen {
+  isolation: isolate;
+}
+
+.image-sheen::after {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  content: "";
+  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.18) 48%, transparent 72%);
+  transform: translateX(-120%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  pointer-events: none;
+}
+
+.group\/card:hover .image-sheen::after {
+  transform: translateX(120%);
+}
+
 /* Serif font utility */
 .font-serif {
   font-family: var(--font-playfair, Georgia, serif);

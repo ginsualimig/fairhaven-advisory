@@ -9,6 +9,7 @@ import {
 } from "@/components/AnimatedSection";
 import Link from "next/link";
 import Image from "next/image";
+import ParallaxImage from "@/components/ParallaxImage";
 
 
 // ── Icons ───────────────────────────────────────────────────────────────────────
@@ -182,11 +183,10 @@ export default function HomePage() {
                   Our approach is quiet and deliberate. We do not publicise every deal or broadcast our methods. We focus on the work — and the work speaks for itself.
                 </p>
               </div>
-              <div className="relative mt-10 aspect-[16/7] overflow-hidden rounded-sm bg-navy shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
-                <Image src="/images/advisory-thinking.webp" alt="Business leaders working together in a bright office" fill sizes="(max-width: 1024px) 100vw, 58vw" className="object-cover" />
+              <ParallaxImage src="/images/advisory-thinking.webp" alt="Business leaders working together in a bright office" sizes="(max-width: 1024px) 100vw, 58vw" className="mt-10 aspect-[16/7] rounded-sm bg-navy shadow-[0_18px_45px_rgba(15,23,42,0.12)]">
                 <div className="absolute inset-0 bg-gradient-to-r from-navy/35 to-transparent" />
                 <div className="absolute bottom-5 left-5 border-l border-gold pl-3 text-xs uppercase tracking-[0.18em] text-white/80">Operators first</div>
-              </div>
+              </ParallaxImage>
             </AnimatedSection>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function HomePage() {
             {services.map((s) => (
               <StaggerItem key={s.title}>
                 <div className="group/card h-full overflow-hidden rounded-sm border border-stone/10 bg-white transition-all duration-300 hover:-translate-y-1 hover:border-teal/30 hover:shadow-[0_18px_40px_rgba(15,23,42,0.08)]">
-                  <div className="relative aspect-[16/8] overflow-hidden bg-navy">
+                  <div className="image-sheen relative aspect-[16/8] overflow-hidden bg-navy">
                     <Image src={s.image} alt={s.imageAlt} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover/card:scale-105" />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/65 via-transparent to-transparent" />
                   </div>
