@@ -287,16 +287,16 @@ export default function HomePage() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {expertise.map((item) => (
                   <div key={item} className="flex items-center gap-3 py-4 border-b border-gold/10">
-                    <span className="text-gold text-xs">✦</span>
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
                     <span className="text-offwhite/80 text-sm">{item}</span>
                   </div>
                 ))}
                 <div className="flex items-center gap-3 py-4 border-b border-gold/10">
-                  <span className="text-gold text-xs">✦</span>
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
                   <span className="text-offwhite/80 text-sm">New Zealand & Australia</span>
                 </div>
                 <div className="flex items-center gap-3 py-4 border-b border-gold/10">
-                  <span className="text-gold text-xs">✦</span>
+                    <span aria-hidden="true" className="h-1.5 w-1.5 rounded-full bg-gold" />
                   <span className="text-offwhite/80 text-sm">Established, profitable businesses</span>
                 </div>
               </div>
@@ -319,7 +319,7 @@ export default function HomePage() {
                 href="/insights"
                 className="mt-8 inline-flex items-center gap-2 text-sm font-medium text-gold hover:text-gold/80 transition-colors"
               >
-                View all insights →
+                View all insights
               </Link>
             </AnimatedSection>
             <AnimatedSection delay={0.1} className="lg:col-span-7">

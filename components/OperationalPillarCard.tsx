@@ -37,7 +37,7 @@ export default function OperationalPillarCard({
         href={href}
         className="inline-flex items-center gap-1 text-sm font-semibold text-gold hover:text-gold/80 transition-colors"
       >
-        Learn More <span className="arrow-animate">→</span>
+        Learn More <span aria-hidden="true" className="h-px w-7 bg-gold transition-all duration-300 group-hover:w-10" />
       </Link>
     </motion.div>
   );

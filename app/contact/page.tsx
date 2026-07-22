@@ -103,7 +103,7 @@ export default function ContactPage() {
             </div>
             <div>
               <div className="text-xs uppercase tracking-widest text-teal font-semibold mb-2">Geography</div>
-              <p className="text-stone text-sm">New Zealand · Australia</p>
+              <p className="text-stone text-sm">New Zealand / Australia</p>
             </div>
             <div className="pt-6 border-t border-stone/10">
               <p className="text-xs text-stone leading-relaxed">

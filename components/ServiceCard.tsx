@@ -37,33 +37,9 @@ export default function ServiceCard({ title, description, href, icon }: ServiceC
           {title}
         </h3>
         <p className="text-stone text-sm leading-relaxed">{description}</p>
-        <div className="mt-4 inline-flex items-center text-sm text-gold font-medium gap-1 overflow-hidden">
+        <div className="mt-4 inline-flex items-center gap-3 text-sm font-medium text-gold">
           <span>Learn more</span>
-          <motion.span
-            className="inline-block"
-            initial={{ x: 0 }}
-            whileHover={{ x: 0 }}
-          >
-            <motion.span
-              className="inline-flex gap-0.5"
-              initial="rest"
-              whileHover="hover"
-              animate="rest"
-            >
-              {["→", "→", "→"].map((arrow, i) => (
-                <motion.span
-                  key={i}
-                  variants={{
-                    rest: { opacity: i === 0 ? 1 : 0, x: i === 0 ? 0 : -8 },
-                    hover: { opacity: 1, x: 0 },
-                  }}
-                  transition={{ duration: 0.2, delay: i * 0.06 }}
-                >
-                  {arrow}
-                </motion.span>
-              ))}
-            </motion.span>
-          </motion.span>
+          <span aria-hidden="true" className="h-px w-7 bg-gold transition-all duration-300 group-hover:w-10" />
         </div>
       </Link>
     </motion.div>

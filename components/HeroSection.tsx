@@ -12,7 +12,7 @@ interface HeroSectionProps {
 export default function HeroSection({
   heading,
   subheading,
-  eyebrow = "Fairhaven Advisory · New Zealand & Australia",
+  eyebrow = "Fairhaven Advisory / New Zealand & Australia",
   image,
   imageAlt,
 }: HeroSectionProps) {
@@ -36,7 +36,7 @@ export default function HeroSection({
             </p>
             <div className="flex flex-wrap items-center gap-5">
               <Link href="/#what-we-do" className="inline-flex items-center gap-3 rounded-sm bg-gold px-5 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/85">
-                Explore our approach <span aria-hidden="true">↘</span>
+                Explore our approach <span aria-hidden="true" className="h-2 w-2 rotate-45 border-b border-r border-current" />
               </Link>
               <Link href="/contact" className="text-sm font-medium text-offwhite/80 underline decoration-gold/60 underline-offset-8 transition-colors hover:text-gold">
                 Start a conversation

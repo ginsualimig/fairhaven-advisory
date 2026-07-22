@@ -32,7 +32,7 @@ export default function InvestorTypeCard({
       <ul className="space-y-2 mt-auto">
         {bullets.map((b, i) => (
           <li key={i} className="flex items-start gap-2 text-sm text-stone">
-            <span className="text-teal mt-0.5 shrink-0">✓</span>
+            <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-teal" />
             {b}
           </li>
         ))}

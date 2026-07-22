@@ -55,7 +55,7 @@ export default function ArticleCard({
           <span className="text-xs text-stone">{article.readTime}</span>
         )}
         <span className="inline-flex items-center gap-1 text-sm font-semibold text-gold ml-auto">
-          Read article →
+          Read article
         </span>
       </div>
       </div>

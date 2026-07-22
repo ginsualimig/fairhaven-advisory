@@ -42,7 +42,7 @@ export default async function InsightPost({ params }: PageProps) {
             href="/insights"
             className="text-teal text-sm hover:underline mb-6 block"
           >
-            ← Back to Insights
+            Back to Insights
           </Link>
           <span className="inline-block text-teal text-xs font-semibold tracking-widest uppercase mb-4">
             {article.category}
