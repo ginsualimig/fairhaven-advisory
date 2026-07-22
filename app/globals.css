@@ -10,7 +10,7 @@
   /* Fairhaven Advisory Design Tokens */
   --color-navy: #0F172A;
   --color-gold: #D4AF37;
-  --color-teal: #4A9B8E;
+  --color-teal: #D4AF37;
   --color-stone: #6B7280;
   --color-offwhite: #F9FAFB;
 }
@@ -31,14 +31,14 @@ body {
 /* Utility classes for brand colors */
 .text-navy    { color: #0F172A; }
 .text-gold     { color: #D4AF37; }
-.text-teal     { color: #4A9B8E; }
+.text-teal     { color: #D4AF37; }
 .text-stone    { color: #6B7280; }
 .bg-navy       { background-color: #0F172A; }
 .bg-gold       { background-color: #D4AF37; }
-.bg-teal       { background-color: #4A9B8E; }
+.bg-teal       { background-color: #D4AF37; }
 .bg-offwhite   { background-color: #F9FAFB; }
 .border-gold   { border-color: #D4AF37; }
-.border-teal   { border-color: #4A9B8E; }
+.border-teal   { border-color: #D4AF37; }
 
 .bg-grid {
   background-image:
