@@ -1,18 +1,42 @@
 "use client";
 
 import { useState } from "react";
+import type { FormEvent } from "react";
 
 export default function ContactPage() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setErrorMessage(data.error || "Something went wrong. Please try again.");
+        return;
+      }
+
+      setStatus("success");
+      setForm({ name: "", email: "", message: "" });
+    } catch {
+      setStatus("error");
+      setErrorMessage("Something went wrong. Please try again, or email us directly.");
+    }
   }
 
   return (
@@ -40,10 +64,10 @@ export default function ContactPage() {
         <div className="mx-auto max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-16">
           {/* Form */}
           <div>
-            {submitted ? (
+            {status === "success" ? (
               <div className="py-12">
-                <p className="text-navy text-lg font-semibold mb-2">Thank you.</p>
-                <p className="text-stone text-sm">We'll be in touch.</p>
+                <p className="text-navy text-lg font-semibold mb-2">Message sent.</p>
+                <p className="text-stone text-sm">Thank you — we&apos;ll be in touch shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -85,10 +109,16 @@ export default function ContactPage() {
                 </div>
                 <button
                   type="submit"
+                  disabled={status === "loading"}
                   className="inline-flex items-center rounded-sm border border-teal px-8 py-3.5 text-sm font-medium text-teal hover:bg-teal/10 transition-colors"
                 >
-                  Send
+                  {status === "loading" ? "Sending…" : "Send"}
                 </button>
+                {status === "error" && (
+                  <p className="text-sm text-red-600" role="alert">
+                    {errorMessage}
+                  </p>
+                )}
               </form>
             )}
           </div>
